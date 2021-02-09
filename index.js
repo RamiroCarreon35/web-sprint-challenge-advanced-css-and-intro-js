@@ -247,19 +247,17 @@ Use get20s to do the following:
 Example born in 1901 and died in 1959 - included -- born in 1889 and died in 1925 not included
 If correct, the function should return ["Salvador Dali", "Frida Kahlo"]*/
 
-function get20s(artists){
-  let results = [];
-  for (let i =0; i < artists.length; i++) {
-    const element = artists [i];
-    let BornAge = artists [i].years.split(" ")[0];
-    let DeadAge = artists[i].years.split(" ")[2];
-    if (BornAge >= 1900 && DeadAge < 2000) {
-      results.push(artists[i].name);
+function get20s(artists) {
+  const names = [];
+  for (let i = 0; i < artists.length; i++) {
+    const dateOfBirth = Number(artists[i].years.slice(0, 4));
+    if (dateOfBirth >= 1900 && dateOfBirth <= 2000) {
+      names.push(artists[i].name);
     }
   }
-  return results;
+  return names;
 }
-
+console.log(get20s(artists));
 
 
 
@@ -272,10 +270,9 @@ function get20s(artists){
  
  For example, if removeArtist is invoked with the artists array and the number 0, it will remove Amedeo Modigliani from our dataset and return the number 19. */
 
- function removeArtist(array, id) {
-  const index = array.indexOf(id);
-  array.splice(index, 1);
-  return array.length;
+ function removeArtist(artistArray, index) {
+  artistArray.splice(index, 1);
+  console.log(artistArray.length);
 }
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 6: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
@@ -294,18 +291,21 @@ Use addArtist to do the following:
 
 Example: addArtist(artists) should return the artists array with the above object added to the end of the array. */
 
-function addArtist(array) {
-  array.push({
-    id: 20,
-    name: "Ramiro Carreon",
-    years: "1990 - February 6",
-    genre: "Web Design",
-    nationality: "American",
-    bio: "Add 1-2 sentences. I dont know what else to add. (or use lorem ipsum)",
-  });
-  return array;
+function addArtist(twentyfirstArtist) {
+  artists.push(twentyfirstArtist);
+  console.log(artists[artists.length - 1]);
 }
+addArtist({
+  id: "21",
+  name: "Ramiro Carreon",
+  years: "1990 - current day",
+  genre: "Web Design",
+  nationality: "Mexican/America",
+  bio:
+    "Born in Pasadena CA, Ramiro is determined to make a better life for himself and future family by acquiring skills to be a software engineer that will in turn allow him to find steady work for various businesses seeking his services",
+});
 
+console.log(artists);
   
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 7: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
@@ -315,16 +315,17 @@ Use lotsOfArt to do the following:
 
 For example lotsOfArt(artists); will return ["Amedeo Modigliani", "Rene Magritte", ... "Albrecht Dürer"]*/
 
-function lotsOfArt(array) {
-  let results = [];
-  for (let i = 0; i < array.length; i++) {
-    const element = array[i];
-    if (element.paintings > 99) {
-      results.push(element.name);
+function lotsOfArt(artists) {
+  const paintings = [];
+  for (let i = 0; i < artists.length; i++) {
+    const painting = artists[i].paintings;
+    if (painting >= 100) {
+      paintings.push(artists[i].name);
     }
   }
-  return results;
+  return paintings;
 }
+console.log(lotsOfArt(artists));
 
 
 
