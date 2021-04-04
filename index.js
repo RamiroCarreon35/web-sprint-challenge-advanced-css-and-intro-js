@@ -232,10 +232,10 @@ console.log(artists[8].name);
  
  Example, if getArtistByIndex is invoked with the artists array and the number 0, it will return `the artist at index 0 is Amedeo Modigliani` */
 
-function getArtistByIndex(artist, num) {
-let result = artist[num];
-return "the artist is at index" + num + "is" + result.name;
-}
+ function getArtistByIndex(arr, idx) {
+  return `the artist at index ${arr[idx]["id"]} is ${arr[idx]["name"]}`;
+}  
+
 
 
 
