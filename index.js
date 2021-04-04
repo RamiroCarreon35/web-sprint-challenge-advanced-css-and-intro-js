@@ -293,21 +293,17 @@ Use addArtist to do the following:
 
 Example: addArtist(artists) should return the artists array with the above object added to the end of the array. */
 
-function addArtist(twentyfirstArtist) {
-  artists.push(twentyfirstArtist);
-  console.log(artists[artists.length - 1]);
+function addArtist(arr){
+  arr.push({
+    id: 20,
+    name: "Ramiro",
+    years: "1990-present",
+    genre: "web design",
+    nationality: "American",
+    bio: "Born in Pasadena, Ca. Family of 6. Will become a computer programmer"
+  });
+  return arr;
 }
-addArtist({
-  id: "21",
-  name: "Ramiro Carreon",
-  years: "1990 - current day",
-  genre: "Web Design",
-  nationality: "Mexican/America",
-  bio:
-    "Born in Pasadena CA, Ramiro is determined to make a better life for himself and future family by acquiring skills to be a software engineer that will in turn allow him to find steady work for various businesses seeking his services",
-});
-
-console.log(artists);
   
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 7: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
