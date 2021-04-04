@@ -216,6 +216,7 @@ console.log(artists[2].bio);
 
 
 
+
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 2: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
 (no function needed) 
 There is a typo in your dataset 😱 The 9th artist, Vincent Van Gogh is currently Vincent Van Dough. Use an array method to fix this issue and console.log() to check your work. */
@@ -231,10 +232,10 @@ console.log(artists[8].name);
  
  Example, if getArtistByIndex is invoked with the artists array and the number 0, it will return `the artist at index 0 is Amedeo Modigliani` */
 
-function getArtistByIndex(artist, num) {
-let result = artist[num];
-return "the artist is at index" + num + "is" + result.name;
-}
+ function getArtistByIndex(arr, idx) {
+  return `the artist at index ${arr[idx]["id"]} is ${arr[idx]["name"]}`;
+}  
+
 
 
 
@@ -270,10 +271,11 @@ console.log(get20s(artists));
  
  For example, if removeArtist is invoked with the artists array and the number 0, it will remove Amedeo Modigliani from our dataset and return the number 19. */
 
- function removeArtist(artistArray, index) {
-  artistArray.splice(index, 1);
-  console.log(artistArray.length);
-}
+ function removeArtist(arr, idx) {
+   arr.splice(idx, 1);
+   return arr.length;
+ }
+
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 6: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
 Use addArtist to do the following: 
@@ -291,21 +293,17 @@ Use addArtist to do the following:
 
 Example: addArtist(artists) should return the artists array with the above object added to the end of the array. */
 
-function addArtist(twentyfirstArtist) {
-  artists.push(twentyfirstArtist);
-  console.log(artists[artists.length - 1]);
+function addArtist(arr){
+  arr.push({
+    id: 20,
+    name: "Ramiro",
+    years: "1990-present",
+    genre: "web design",
+    nationality: "American",
+    bio: "Born in Pasadena, Ca. Family of 6. Will become a computer programmer"
+  });
+  return arr;
 }
-addArtist({
-  id: "21",
-  name: "Ramiro Carreon",
-  years: "1990 - current day",
-  genre: "Web Design",
-  nationality: "Mexican/America",
-  bio:
-    "Born in Pasadena CA, Ramiro is determined to make a better life for himself and future family by acquiring skills to be a software engineer that will in turn allow him to find steady work for various businesses seeking his services",
-});
-
-console.log(artists);
   
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 7: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
